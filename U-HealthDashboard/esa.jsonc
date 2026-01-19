@@ -1,5 +1,9 @@
 {
   "name": "U-HealthDashboard",
   "description": "迷你健康仪表盘 - 健康管理与追踪应用",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "assets": {
+      "directory": "./dist",
+      "notFoundStrategy": "singlePageApplication"
+  }
 }
