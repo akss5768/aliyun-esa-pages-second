@@ -1,0 +1,12 @@
+作品访问地址:
+https://u-responsivetest.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-ResponsiveTest
+
+作品说明:
+# U-ResponsiveTest 响应式设计测试工具
+
+多设备响应式设计测试工具，支持桌面、平板、手机等多种设备模拟。
+
+技术栈: React 18, Tailwind CSS, Vite, Lucide React

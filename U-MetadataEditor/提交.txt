@@ -1,0 +1,33 @@
+作品访问地址:
+https://u-metadataeditor.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-MetadataEditor
+
+
+作品说明:
+# U-MetadataEditor 媒体元数据编辑器
+
+U-MetadataEditor 是一个专业的媒体元数据编辑工具，支持图片、视频、音频等多种媒体文件的元数据管理。提供可视化编辑、标签管理、批量导出等功能，帮助用户更好地管理和描述媒体资源。
+
+## 功能特性
+
+- **多格式支持** - 支持图片、视频、音频等多种媒体格式
+- **实时预览** - 上传后即可预览媒体内容
+- **元数据编辑** - 编辑标题、描述、作者、日期、版权等信息
+- **标签系统** - 为媒体添加自定义标签，方便分类和检索
+- **批量管理** - 支持上传多个文件，批量编辑元数据
+- **导出功能** - 支持单个或批量导出元数据为JSON格式
+- **本地存储** - 使用浏览器 localStorage 保存数据
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **精美UI设计** - 采用渐变色和阴影效果，界面简洁明亮
+
+## 技术栈
+
+- **前端框架**: React 18
+- **路由**: React Router
+- **UI样式**: Tailwind CSS
+- **状态管理**: React Hooks
+- **数据库**: LocalStorage
+- **构建工具**: Vite
+- **图标库**: Lucide React

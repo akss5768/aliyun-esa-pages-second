@@ -1,0 +1,30 @@
+作品访问地址:
+https://u-weatherstation.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-WeatherStation
+
+
+作品说明:
+# U-WeatherStation 天气站
+
+U-WeatherStation 是一个现代化的天气监测平台，提供实时天气查看、7天天气预报和多城市管理功能。
+
+## 功能特性
+
+- **实时天气** - 查看当前温度、湿度、风速和能见度
+- **天气预报** - 7天天气预报，提前规划行程
+- **多城市管理** - 支持添加和管理多个城市
+- **单位设置** - 自定义温度和风速显示单位
+- **本地数据存储** - 使用浏览器 localStorage 进行数据存储，无需服务器
+- **响应式设计** - 完美适配桌面、平板和手机设备
+
+## 技术栈
+
+- **前端框架**: React 18
+- **路由**: React Router
+- **UI样式**: Tailwind CSS
+- **状态管理**: React Hooks
+- **数据库**: LocalStorage
+- **构建工具**: Vite
+- **图标库**: Lucide React
