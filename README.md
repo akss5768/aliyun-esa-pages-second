@@ -13,10 +13,6 @@
 功能完善的浏览器端Markdown笔记应用，支持实时预览、语法高亮、笔记管理等功能。无需服务器，所有数据存储在本地，安全可靠。
 - **访问地址**: https://u-markdownnote.39b9884f.er.aliyun-esa.net/
 
-### 🖼️ [U-MetadataEditor - 媒体元数据编辑器](./U-MetadataEditor)
-专业的媒体元数据编辑工具，支持图片、视频、音频等多种媒体文件的元数据管理。提供可视化编辑、标签管理、批量导出等功能。
-- **访问地址**: https://u-metadataeditor.39b9884f.er.aliyun-esa.net/
-
 ### 📱 [U-ResponsiveTest - 响应式设计测试工具](./U-ResponsiveTest)
 多设备响应式设计测试工具，支持桌面、平板、手机等多种设备模拟，帮助开发者快速测试页面在不同设备上的显示效果。
 - **访问地址**: https://u-responsivetest.39b9884f.er.aliyun-esa.net/
