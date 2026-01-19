@@ -160,10 +160,10 @@ function MarkdownNote() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* 左侧笔记列表 */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-2xl shadow-lg p-6">
+            <div className="lg:col-span-1 h-[calc(100vh-200px)]">
+              <div className="bg-white rounded-2xl shadow-lg p-6 h-full flex flex-col">
                 <h2 className="text-lg font-bold text-gray-800 mb-4">笔记列表</h2>
-                <div className="space-y-3 max-h-[calc(100vh-250px)] overflow-y-auto">
+                <div className="space-y-3 flex-1 overflow-y-auto">
                   {filteredNotes.map((note) => (
                     <div
                       key={note.id}
@@ -200,9 +200,9 @@ function MarkdownNote() {
             </div>
 
             {/* 右侧编辑和预览区域 */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 h-[calc(100vh-200px)]">
               {selectedNote ? (
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
                   {/* 工具栏 */}
                   <div className="bg-gray-50 border-b px-6 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -274,9 +274,9 @@ function MarkdownNote() {
                   </div>
 
                   {/* 编辑和预览区域 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 h-[calc(100vh-300px)]">
+                  <div className={`flex-1 ${showEditor && showPreview ? 'grid grid-cols-1 md:grid-cols-2' : ''}`}>
                     {showEditor && (
-                      <div className="border-r overflow-hidden">
+                      <div className={!showPreview ? '' : 'border-r overflow-hidden'}>
                         <textarea
                           value={editingMode ? tempContent : selectedNote.content}
                           onChange={(e) => setTempContent(e.target.value)}
@@ -288,7 +288,7 @@ function MarkdownNote() {
                     )}
 
                     {showPreview && (
-                      <div className="overflow-y-auto">
+                      <div className={`overflow-y-auto ${!showEditor ? 'h-full' : ''}`}>
                         <div className="p-6 markdown-preview">
                           <ReactMarkdown remarkPlugins={[remarkGfm]}>
                             {editingMode ? tempContent : selectedNote.content}
