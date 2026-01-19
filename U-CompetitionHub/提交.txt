@@ -1,0 +1,33 @@
+作品访问地址:
+https://u-competitionhub.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-CompetitionHub
+
+
+作品说明:
+# U-CompetitionHub 竞赛信息展示平台
+
+U-CompetitionHub 是一个现代化的竞赛信息展示平台，帮助用户快速查找和了解各类竞赛信息，包括编程、学术、设计、商业等多个领域的竞赛。
+
+## 功能特性
+
+- **多类型竞赛展示** - 支持编程竞赛、学术竞赛、设计竞赛、商业竞赛、体育竞赛等多种类型
+- **智能筛选功能** - 按类别、状态、级别筛选竞赛，支持关键词搜索
+- **分页功能** - 支持分页浏览竞赛列表，可自定义每页显示数量
+- **详细竞赛信息** - 提供竞赛简介、主办单位、报名时间、参赛要求等详细信息
+- **收藏功能** - 支持收藏感兴趣的竞赛
+- **数据持久化** - 使用浏览器 localStorage 进行数据存储
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **统计仪表盘** - 实时显示竞赛数量统计信息
+
+## 技术栈
+
+- **前端框架**: React 18
+- **路由**: React Router
+- **UI样式**: Tailwind CSS
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **图标库**: Lucide React
+- **环境**: Node.js 18+
