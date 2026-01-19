@@ -93,7 +93,7 @@ function SortableTask({ task, isCompleted, toggleTask, deleteTask, getPriorityBa
   );
 }
 
-export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAddToHistory }) {
+export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAddToHistory, onSaveProgress }) {
   const [completedTasks, setCompletedTasks] = useState([]);
 
   useEffect(() => {
@@ -129,10 +129,17 @@ export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAd
   );
 
   const toggleTask = (taskId) => {
+    let newCompletedTasks;
     if (completedTasks.includes(taskId)) {
-      setCompletedTasks(completedTasks.filter(id => id !== taskId));
+      newCompletedTasks = completedTasks.filter(id => id !== taskId);
     } else {
-      setCompletedTasks([...completedTasks, taskId]);
+      newCompletedTasks = [...completedTasks, taskId];
+    }
+    setCompletedTasks(newCompletedTasks);
+    
+    // 如果有保存进度的回调，则调用它
+    if (onSaveProgress) {
+      setTimeout(() => onSaveProgress(), 0); // 使用setTimeout确保状态更新后再调用
     }
   };
 
@@ -150,6 +157,11 @@ export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAd
     const newCompletedTasks = completedTasks.filter(id => id !== taskId);
     setCompletedTasks(newCompletedTasks);
     onDelete(newTasks);
+    
+    // 如果有保存进度的回调，则调用它
+    if (onSaveProgress) {
+      setTimeout(() => onSaveProgress(), 0);
+    }
   };
 
   const handleDragEnd = (event) => {
@@ -159,6 +171,11 @@ export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAd
       const newIndex = dailyTasks.findIndex((task) => task.id === over.id);
       const newTasks = arrayMove(dailyTasks, oldIndex, newIndex);
       onUpdate(newTasks);
+      
+      // 如果有保存进度的回调，则调用它
+      if (onSaveProgress) {
+        setTimeout(() => onSaveProgress(), 0);
+      }
     }
   };
 
@@ -178,6 +195,11 @@ export default function TaskList({ dailyTasks, onUpdate, onDelete, onClear, onAd
     if (confirm('确定要清除今日任务吗？此操作不可撤销。')) {
       setCompletedTasks([]);
       onClear();
+      
+      // 如果有保存进度的回调，则调用它
+      if (onSaveProgress) {
+        setTimeout(() => onSaveProgress(), 0);
+      }
     }
   };
 

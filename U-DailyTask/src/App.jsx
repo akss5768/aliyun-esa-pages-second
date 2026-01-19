@@ -61,7 +61,35 @@ function App() {
       storage.remove('dailyTask_dailyTasks');
       storage.remove('dailyTask_dailyTasksDate');
     }
+    
+    // 自动保存当日任务状态到历史记录
+    saveCurrentDayProgress();
   }, [dailyTasks]);
+
+  // 添加一个effect来监听任务完成状态变化并自动保存到历史记录
+  useEffect(() => {
+    if (dailyTasks.length > 0) {
+      saveCurrentDayProgress();
+    }
+  }, [dailyTasks]);
+  
+  const saveCurrentDayProgress = () => {
+    const today = format(new Date(), 'yyyy-MM-dd');
+    const completedTasks = JSON.parse(localStorage.getItem('dailyTask_completedTasks') || '[]');
+    const completedCount = completedTasks.length;
+    
+    if (dailyTasks.length > 0) { // 只有在有任务时才保存到历史
+      const newEntry = {
+        date: today,
+        tasks: dailyTasks.map(t => t.name),
+        completed: completedCount,
+        total: dailyTasks.length
+      };
+      
+      const updatedHistory = history.filter(h => h.date !== today);
+      setHistory([newEntry, ...updatedHistory]);
+    }
+  };
 
   const handleGenerate = (tasks) => {
     if (dailyTasks.length > 0) {
@@ -239,6 +267,7 @@ function App() {
                 onDelete={setDailyTasks}
                 onClear={handleClearTasks}
                 onAddToHistory={handleAddToHistory}
+                onSaveProgress={saveCurrentDayProgress}
               />
             )}
             {activeTab === 'manager' && (

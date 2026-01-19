@@ -42,7 +42,8 @@ export const sampleHistory = [
   { date: "2025-01-15", tasks: ["回复邮件", "晨跑", "阅读技术文档", "整理房间"], completed: 4, total: 4 },
   { date: "2025-01-16", tasks: ["准备会议", "拉伸运动", "购物"], completed: 3, total: 3 },
   { date: "2025-01-17", tasks: ["完成报告", "练习编程", "做家务", "阅读新闻"], completed: 3, total: 4 },
-  { date: "2025-01-18", tasks: ["客户沟通", "喝水提醒", "做饭"], completed: 3, total: 3 }
+  { date: "2025-01-18", tasks: ["客户沟通", "喝水提醒", "做饭"], completed: 3, total: 3 },
+  { date: new Date().toISOString().split('T')[0], tasks: ["晨跑", "阅读技术文档", "完成报告"], completed: 1, total: 3 }
 ];
 
 export const defaultTaskTypes = {

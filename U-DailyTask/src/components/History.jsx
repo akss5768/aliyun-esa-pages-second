@@ -10,6 +10,18 @@ export default function History({ history, onUpdate }) {
     return saved !== null ? JSON.parse(saved) : true;
   });
 
+  // 获取历史记录中最早的年份
+  const earliestYear = history && history.length > 0 
+    ? Math.min(...history.map(h => new Date(h.date).getFullYear()))
+    : new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+  
+  // 生成年份选项
+  const years = [];
+  for (let year = earliestYear; year <= currentYear; year++) {
+    years.push(year);
+  }
+
   useEffect(() => {
     localStorage.setItem('dailyTask_showCalendar', JSON.stringify(showCalendar));
   }, [showCalendar]);
@@ -101,9 +113,20 @@ export default function History({ history, onUpdate }) {
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <h4 className="text-lg font-bold text-gray-800">
-              {format(currentMonth, 'yyyy年MM月')}
-            </h4>
+            <div className="flex items-center space-x-2">
+              <select
+                value={getYear(currentMonth)}
+                onChange={(e) => setCurrentMonth(new Date(parseInt(e.target.value), getMonth(currentMonth), 1))}
+                className="px-3 py-1 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {years.map(year => (
+                  <option key={year} value={year}>{year}年</option>
+                ))}
+              </select>
+              <h4 className="text-lg font-bold text-gray-800">
+                {format(currentMonth, 'MM月')}
+              </h4>
+            </div>
             <button
               onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
               className="p-2 hover:bg-gray-100 rounded-lg transition"
