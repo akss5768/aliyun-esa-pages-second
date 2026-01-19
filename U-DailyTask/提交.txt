@@ -1,0 +1,29 @@
+作品访问地址:
+https://u-dailytask.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-DailyTask
+
+
+作品说明:
+# U-DailyTask - 今日任务
+
+U-DailyTask 是一款智能任务管理应用，通过随机生成帮助用户规划每日任务，同时提供任务库管理和历史记录功能。
+
+## 功能特性
+
+- **任务编排** - 智能随机生成每日任务清单，按分类和优先级筛选
+- **交互功能** - 支持勾选完成的任务管理，实时显示进度
+- **自定义设置** - 灵活配置任务类型、优先级和预计时间
+- **历史追踪** - 记录用户任务完成情况，查看完成趋势
+- **数据持久化** - 使用LocalStorage自动保存所有数据
+
+## 技术栈
+
+- **前端框架**: React 18
+- **构建工具**: Vite
+- **UI样式**: Tailwind CSS 3.4
+- **图标库**: Lucide React
+- **日期处理**: date-fns
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage

@@ -1,0 +1,32 @@
+作品访问地址:
+https://u-healthdashboard.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-HealthDashboard
+
+
+作品说明:
+# U-HealthDashboard - 迷你健康仪表盘
+
+U-HealthDashboard 是一款迷你健康管理应用，帮助用户记录健康指标、管理用药提醒、追踪症状变化，并生成可打印的健康报告。
+
+## 功能特性
+
+- **健康档案** - 存储血型、过敏信息、慢性疾病和紧急联系人等关键健康信息
+- **数据可视化** - 使用动态图表展示血压、心率、体重、睡眠等健康指标趋势
+- **用药管理** - 带提醒功能的日历系统，记录药物服用时间和剂量
+- **症状追踪** - 支持图文记录的症状日志，按严重程度分类
+- **数据导出** - 一键生成可打印的PDF健康报告
+- **数据持久化** - 使用LocalStorage自动保存所有数据
+
+## 技术栈
+
+- **前端框架**: React 18
+- **构建工具**: Vite
+- **UI样式**: Tailwind CSS 3.4
+- **图表库**: Recharts
+- **图标库**: Lucide React
+- **日期处理**: date-fns
+- **PDF生成**: jsPDF
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage

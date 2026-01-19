@@ -1,0 +1,31 @@
+作品访问地址:
+https://u-travelcapsule.39b9884f.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-second/tree/main/U-TravelCapsule
+
+
+作品说明:
+# U-TravelCapsule - 智能旅行胶囊
+
+U-TravelCapsule 是一款智能旅行管理应用，帮助用户轻松规划旅行行程、管理打包清单、计算旅行费用，并提供紧急联系方式和PDF导出功能。
+
+## 功能特性
+
+- **交互式时间轴** - 使用图形化方式展示每日行程安排，清晰直观
+- **智能打包清单** - 支持勾选式操作，可分类管理物品，实时显示打包进度
+- **紧急信息集成** - 预置当地医院、大使馆等关键联系信息
+- **费用计算器** - 实时计算旅行费用，支持多人分摊和可视化展示
+- **离线功能** - 生成包含完整行程信息的PDF手册，方便离线查看
+- **数据持久化** - 使用LocalStorage自动保存所有数据
+
+## 技术栈
+
+- **前端框架**: React 18
+- **构建工具**: Vite
+- **UI样式**: Tailwind CSS 3.4
+- **图标库**: Lucide React
+- **日期处理**: date-fns
+- **PDF生成**: jsPDF
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
