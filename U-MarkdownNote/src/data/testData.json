@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "React 学习笔记",
+      "content": "# React 学习笔记\n\n## 基础概念\n\nReact 是一个用于构建用户界面的 JavaScript 库。\n\n### 核心特性\n\n- **组件化**：将 UI 拆分为独立、可复用的组件\n- **声明式**：描述 UI 应该是什么样子，而不是如何改变它\n- **单向数据流**：数据从父组件流向子组件\n\n## Hooks\n\n### useState\n\n用于在函数组件中添加状态。\n\n```javascript\nconst [count, setCount] = useState(0);\n```\n\n### useEffect\n\n用于处理副作用。\n\n```javascript\nuseEffect(() => {\n  document.title = `Count: ${count}`;\n}, [count]);\n```\n\n### 自定义 Hook\n\n可以创建自己的 Hooks 来复用状态逻辑。\n\n## 最佳实践\n\n1. 保持组件纯净\n2. 合理使用 React.memo\n3. 优化渲染性能\n4. 编写测试用例",
+      "tags": ["React", "前端", "学习笔记"],
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript 进阶",
+      "content": "# JavaScript 进阶\n\n## 闭包\n\n闭包是指有权访问另一个函数作用域中变量的函数。\n\n```javascript\nfunction createCounter() {\n  let count = 0;\n  return {\n    increment: () => count++,\n    getCount: () => count\n  };\n}\n```\n\n## 原型链\n\n每个 JavaScript 对象都有一个原型对象，对象以其原型为模板、从原型继承方法和属性。\n\n### 原型链示例\n\n```javascript\nfunction Person(name) {\n  this.name = name;\n}\n\nPerson.prototype.greet = function() {\n  return `Hello, ${this.name}`;\n};\n```\n\n## 异步编程\n\n### Promise\n\nPromise 是异步编程的一种解决方案。\n\n```javascript\nconst promise = new Promise((resolve, reject) => {\n  setTimeout(() => resolve('Success!'), 1000);\n});\n```\n\n### Async/Await\n\n基于 Promise 的语法糖。\n\n```javascript\nasync function fetchData() {\n  const response = await fetch('/api/data');\n  const data = await response.json();\n  return data;\n}\n```",
+      "tags": ["JavaScript", "编程", "进阶"],
+      "createdAt": "2024-01-16T10:00:00.000Z",
+      "updatedAt": "2024-01-16T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "项目计划",
+      "content": "# 项目计划\n\n## 目标\n\n完成一个现代化的 Web 应用。\n\n## 时间线\n\n| 阶段 | 任务 | 状态 |\n|------|------|------|\n| 需求分析 | 收集和分析需求 | ✅ 完成 |\n| 设计 | UI/UX 设计 | 🔄 进行中 |\n| 开发 | 前端和后端开发 | ⏳ 待开始 |\n| 测试 | 单元测试和集成测试 | ⏳ 待开始 |\n| 部署 | 上线部署 | ⏳ 待开始 |\n\n## 优先级\n\n1. 🔥 高优先级\n2. ⚡ 中优先级\n3. ☕ 低优先级\n\n## 注意事项\n\n> 这是一条重要的提示信息。\n\n请确保在开发过程中遵循最佳实践。",
+      "tags": ["项目", "计划", "管理"],
+      "createdAt": "2024-01-17T10:00:00.000Z",
+      "updatedAt": "2024-01-17T10:00:00.000Z"
+    }
+  ]
+}
