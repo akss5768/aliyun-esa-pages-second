@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 自定义搜索语法模态框样式 */
+.syntax-modal-wrapper {
+  @apply rounded-lg overflow-hidden;
+}
+
+.syntax-modal-wrapper .ant-modal-content {
+  @apply bg-gray-900 rounded-lg overflow-hidden;
+}
+.syntax-modal-wrapper .ant-modal-header {
+  @apply bg-red-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-t-lg m-0;
+}
+
+.syntax-modal-wrapper .ant-modal-body {
+  @apply bg-gray-900 text-gray-100 p-5;
+}
+
+.syntax-form .ant-form-item-label > label {
+  @apply text-gray-300 font-medium;
+}
+
+.syntax-select {
+  @apply bg-gray-800 border-gray-700 text-gray-100 rounded-lg;
+}
+
+.syntax-select .ant-select-selector {
+  @apply bg-gray-800 border-gray-700 text-gray-100 rounded-lg !important;
+}
+
+.syntax-select-dropdown {
+  @apply bg-gray-800;
+}
+
+.syntax-select-dropdown .ant-select-item {
+  @apply bg-gray-800 text-gray-200 hover:bg-blue-900/50 !important;
+}
+
+.syntax-select-dropdown .ant-select-item-option-selected {
+  @apply bg-blue-900/40 !important;
+}
+
+.syntax-input {
+  @apply bg-gray-800 border-gray-700 text-gray-100 rounded-lg;
+}
+
+.syntax-input .ant-input {
+  @apply bg-gray-800 border-gray-700 text-gray-100 rounded-lg !important;
+}
+
+.syntax-cancel-btn {
+  @apply bg-gray-700 text-gray-200 border-gray-600 hover:bg-gray-600 transition-all duration-300 !important;
+}
+
+.syntax-add-btn {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 border-none hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 !important;
+}
+
+.syntax-option {
+  @apply bg-gray-800 text-gray-200 py-2 !important;
+}
+
+.syntax-option .syntax-option-content {
+  @apply block;
+}
+
+.syntax-option .syntax-option-title {
+  @apply font-medium text-gray-200;
+}
+
+.syntax-option .syntax-option-desc {
+  @apply text-gray-400 text-sm mt-1;
+}
+
+.syntax-option .syntax-option-example {
+  @apply text-cyan-400 text-xs font-mono mt-1;
+}
+
+/* form-item-content:input 默认input框 增加背景色为红色 */
+

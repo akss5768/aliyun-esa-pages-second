@@ -298,8 +298,11 @@ const SearchPage = ({ language, searchEngines, defaultEngine }) => {
       {/* 添加语法模态框 */}
       <Modal
         title={
-          <div className="text-gray-100 bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-2 rounded-t-lg">
-            {language === 'zh' ? '添加搜索语法' : 'Add Search Syntax'}
+          <div className="text-gray-200 bg-gradient-to-r from-blue-600 to-cyan-600 p-3 rounded-t-lg">
+            <div className="flex items-center">
+              <PlusOutlined className="mr-2" />
+              <span className="font-semibold">{language === 'zh' ? '添加搜索语法' : 'Add Search Syntax'}</span>
+            </div>
           </div>
         }
         open={isModalVisible}
@@ -309,27 +312,46 @@ const SearchPage = ({ language, searchEngines, defaultEngine }) => {
         }}
         footer={null}
         width={500}
-        className="modal-animate"
+        className="syntax-modal-wrapper rounded-lg overflow-hidden"
+        styles={{
+          mask: { backgroundColor: 'rgba(15, 23, 42, 0.8)' },
+          body: { 
+            padding: '20px', 
+            background: '#0f172a',
+            color: '#e2e8f0',
+            fontFamily: 'inherit'
+          },
+          header: { 
+            background: 'linear-gradient(to right, #2563eb, #06b6d4)',
+            marginBottom: '0',
+            padding: '16px 20px',
+            color: 'white'
+          }
+        }}
       >
         <Form
           form={form}
           layout="vertical"
           onFinish={handleAddSyntax}
+          className="syntax-form"
         >
           <Form.Item
             name="type"
-            label={<span className="text-gray-300">{language === 'zh' ? '语法类型' : 'Syntax Type'}</span>}
+            label={<span className="text-gray-300 font-medium">{language === 'zh' ? '语法类型' : 'Syntax Type'}</span>}
             rules={[{ required: true, message: language === 'zh' ? '请选择语法类型' : 'Please select syntax type' }]}
           >
             <Select 
               placeholder={language === 'zh' ? '请选择语法类型' : 'Select syntax type'}
-              className="bg-gray-800 border-gray-700 text-gray-100"
+              className="syntax-select bg-gray-800 border-gray-700 text-gray-100"
+              popupClassName="syntax-select-dropdown"
+              size="middle"
             >
               {SYNTAX_TYPES.map(syntax => (
-                <Option key={syntax.value} value={syntax.value}>
-                  <div>
-                    <div className="text-gray-100">{language === 'zh' ? syntax.label : syntax.value}</div>
-                    <div className="text-gray-400 text-xs">{syntax.description}</div>
+                <Option key={syntax.value} value={syntax.value} className="syntax-option">
+                  <div className="syntax-option-content py-1">
+                    <div className="syntax-option-title">{syntax.label}</div>
+                    <div className="syntax-option-desc">{syntax.description}</div>
+                    <div className="syntax-option-example">示例: {syntax.value}:{syntax.placeholder}</div>
                   </div>
                 </Option>
               ))}
@@ -338,32 +360,36 @@ const SearchPage = ({ language, searchEngines, defaultEngine }) => {
           
           <Form.Item
             name="value"
-            label={<span className="text-gray-300">{language === 'zh' ? '值' : 'Value'}</span>}
+            label={<span className="text-gray-300 font-medium">{language === 'zh' ? '值' : 'Value'}</span>}
             rules={[{ required: true, message: language === 'zh' ? '请输入值' : 'Please enter value' }]}
           >
             <Input 
-              placeholder={language === 'zh' ? '请输入值' : 'Enter value'} 
-              className="bg-gray-800 border-gray-700 text-gray-100"
+              placeholder={language === 'zh' ? `请输入${SYNTAX_TYPES.find(s => s.value === form.getFieldValue()?.type)?.placeholder || '值'}` : 'Enter value'} 
+              className="syntax-input bg-gray-800 border-gray-700 text-gray-100"
+              size="middle"
             />
           </Form.Item>
           
-          <Form.Item className="mb-0">
-            <div className="flex justify-end space-x-2">
+          <Form.Item className="mb-0 mt-1">
+            <div className="flex justify-end space-x-2 pt-2">
               <Button 
                 onClick={() => {
                   setIsModalVisible(false);
                   form.resetFields();
                 }}
-                className="bg-gray-700 text-gray-200 border-gray-600 hover:bg-gray-600 transition-all duration-300"
+                className="syntax-cancel-btn bg-gray-700 text-gray-200 border-gray-600 hover:bg-gray-600"
+                size="middle"
               >
                 {language === 'zh' ? '取消' : 'Cancel'}
               </Button>
               <Button 
                 type="primary" 
                 htmlType="submit"
-                className="bg-gradient-to-r from-blue-600 to-cyan-600 border-none hover:from-blue-700 hover:to-cyan-700 transition-all duration-300"
+                className="syntax-add-btn bg-gradient-to-r from-blue-600 to-cyan-600 border-none hover:from-blue-700 hover:to-cyan-700"
+                size="middle"
+                icon={<PlusOutlined />}
               >
-                {language === 'zh' ? '添加' : 'Add'}
+                {language === 'zh' ? '添加语法' : 'Add Syntax'}
               </Button>
             </div>
           </Form.Item>
